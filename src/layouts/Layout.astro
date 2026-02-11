@@ -4,8 +4,8 @@ import Header from "../components/layout/Header.astro";
 import Footer from "../components/layout/Footer.astro";
 import  SpeedInsights  from "@vercel/speed-insights/astro"
 const {
-  pageTitle = "NeonMint by EFEELE 🚀",
-  description = "Welcome to NeonMint by EFEELE, where I develop software and share knowledge.",
+  pageTitle = "Portafolio Andrés González",
+  description = "Este es mi portafolio.",
   ogimage = {
     url: "/images/imagedefault.webp",
     alt: "Default image of EFEELE",
@@ -14,11 +14,11 @@ const {
 
 const siteUrl = new URL(Astro.url).origin;
 const SEO = {
-  sitename: "NeonMint by EFEELE🚀",
+  sitename: "Portafolio",
   url: siteUrl,
-  locale: "en_US",
-  author: "Fernando Lopez | EFEELE",
-  twitter: "@efeeledev",
+  
+  author: "Andrés González",
+  t
 };
 
 
@@ -83,9 +83,7 @@ const twitterimage = `${siteUrl}${ogimage.url}`;
     <Header />
 
     <div class="min-h-[85vh] ">
-    <div style="background:red;color:white;padding:20px;font-size:24px">
-  🚨 CAMBIO DIRECTO EN LAYOUT 🚨
-</div>
+    
 
       <slot />
     </div>
