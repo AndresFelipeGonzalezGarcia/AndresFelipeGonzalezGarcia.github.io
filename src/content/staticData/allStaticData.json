@@ -5,7 +5,7 @@
   "profileTitle": "Estudiante de Ingeniería de Sistemas",
   "profileName": "Andrés González",
 
-  "github": "https://github.com/TU_USUARIO",
+  "github": "https://github.com",
   "githubText": "Repositorio de proyectos académicos",
 
   "portfolioImage": "/images/portfolio.webp",
@@ -37,8 +37,8 @@
     "Aprendizaje continuo"
   ],
 
-  "pageTitle": "Portafolio Académico | Andrés González",
-  "pageDescription": "Portafolio académico de Ingeniería de Sistemas. Evidencias, proyectos y aprendizaje.",
+  "pageTitle": "Portafolio | Andrés González",
+  "pageDescription": "Portafolio académico de Ingeniería de Sistemas.",
 
   "OGImage": {
     "url": "/images/imagedefault.webp",
