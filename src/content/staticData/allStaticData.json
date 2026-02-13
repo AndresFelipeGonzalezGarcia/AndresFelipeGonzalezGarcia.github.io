@@ -38,7 +38,10 @@
   ],
 
   "pageTitle": "Portafolio | Andrés González",
-  "pageDescription": "Portafolio académico."
+  "pageDescription": "Portafolio académico.",
 
- 
+  "OGImage": {
+    "url": "/images/imagedefault.webp",
+    "alt": "Portafolio académico de Andrés González, estudiante de Ingeniería de Sistemas"
+  }
 }
