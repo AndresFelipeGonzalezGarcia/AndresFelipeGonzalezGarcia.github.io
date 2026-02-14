@@ -6,9 +6,18 @@ import Experience from "../components/portfolio/Experience.astro";
 import NavArticle from "../components/layout/NavArticle.astro";
 import Contact from "../components/portfolio/Contact.astro";
 import Tools from "../components/portfolio/Tools.astro";
-const { frontmatter } = Astro.props;
----
 
+const { frontmatter } = Astro.props;
+
+// Fallbacks por si algún campo no viene en el frontmatter
+const profileImg = frontmatter?.image?.url || "/images/andres-profile.webp";
+const profileAlt =
+  frontmatter?.image?.alt || frontmatter?.author || "Profile photo";
+const authorOrTitle =
+  frontmatter?.author || frontmatter?.title || "About me";
+const aboutLink = frontmatter?.profileLink || "/about-me";
+const description = frontmatter?.description || "";
+---
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     document.querySelectorAll("h1, h2, h3, h4, h5, h6").forEach((header) => {
@@ -44,11 +53,12 @@ const { frontmatter } = Astro.props;
               </div>
               <div class="relative z-20 flex w-full rounded-full bg-mint-900">
                 <div
-                  class="w-full aspect-square rounded-full bg-[url(/images/efeeleprofile.webp)] bg-center bg-cover"
-                  aria-label="Photo of Fernando Aldair López Ponce (EFEELE) for the blog"
+                  class="w-full aspect-square rounded-full bg-center bg-cover"
+                  style={`background-image: url(${profileImg})`}
+                  aria-label={profileAlt}
                 >
                   <a
-                    href="/about-me"
+                    href={aboutLink}
                     class="flex h-full w-full"
                     aria-label="View about me page"></a>
                 </div>
@@ -58,34 +68,30 @@ const { frontmatter } = Astro.props;
 
           <div class="w-full flex flex-col justify-center gap-4 max-md:gap-2">
             <div class="text-center">
-              <Heading textGradient="Fernando López | EFEELE" />
+              <Heading textGradient={authorOrTitle} />
             </div>
 
             <p
               class="text-lg max-xl:text-base text-blacktext dark:text-gray-200 mb-0 leading-8 font-semibold"
             >
-              <b
-                class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >Frontend Developer</b
-              > with <b
-                class="bg-linear-to-r from-riptide-400 to-mint-500 dark:to-mint-200 dark:from-riptide-300 text-transparent bg-clip-text"
-                >8 years of experience</b
-              >, passionate about development, technology, and coffee that
-              sparks ideas. I love bringing digital projects to life. 🚀☕
+              {description}
             </p>
           </div>
         </div>
       </div>
+
       <div class="flex gap-4 items-center">
-        <Heading text="About" textGradient="me" />
+        <Heading text="Quién" textGradient="soy" />
       </div>
 
       <div class="markdown text-white" id="content">
         <slot />
       </div>
     </article>
+
     <NavArticle title={frontmatter.title} />
   </section>
+
   <section class="py-8 px-8 max-md:py-4 mb-4 scroll-m-16" id="experience">
     <div class="flex flex-col gap-8 pt-8 max-w-4xl mx-auto">
       <div class="flex gap-4 items-center justify-center">
@@ -96,6 +102,7 @@ const { frontmatter } = Astro.props;
       <Experience />
     </div>
   </section>
+
   <section class="py-8 px-8 max-md:py-4 mt-10 mb-20 scroll-m-16" id="sttack">
     <div class="flex flex-col gap-8 max-w-3xl justify-center mx-auto">
       <div class="flex gap-4 items-center justify-center">
@@ -105,5 +112,6 @@ const { frontmatter } = Astro.props;
       <Tools variant="center" />
     </div>
   </section>
+
   <Contact />
 </Layout>
