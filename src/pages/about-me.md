@@ -11,7 +11,7 @@ image:
 
 Desde que inicié mi formación en **Ingeniería de Sistemas en la Universidad El Bosque**, he desarrollado un gran interés por el mundo de la tecnología y el desarrollo de software. Actualmente curso quinto semestre y he fortalecido mis conocimientos en **bases de datos, programación y desarrollo web**.
 
-## Mi Enfoque Académico 🖥️
+## Mi Enfoque Académico 
 
 Durante la carrera he trabajado en proyectos relacionados con:
 
@@ -23,7 +23,7 @@ Durante la carrera he trabajado en proyectos relacionados con:
 
 Cada asignatura ha sido una oportunidad para aplicar la teoría en proyectos prácticos que fortalecen mis habilidades técnicas.
 
-## Desarrollo Web 🌐
+## Desarrollo Web 
 
 Uno de los campos que más me interesa es el desarrollo web. Me motiva crear interfaces funcionales, estructuradas y bien diseñadas, aplicando buenas prácticas tanto en frontend como en backend.
 
@@ -35,7 +35,7 @@ He trabajado con tecnologías como:
 - Bases de datos relacionales
 - Herramientas de control de versiones
 
-## Aprendizaje Continuo 🚀
+## Aprendizaje Continuo 
 
 Considero que la tecnología es un campo en constante evolución, por lo que mantengo una mentalidad de aprendizaje permanente. Mi objetivo es seguir fortaleciendo mis competencias técnicas y participar en proyectos que me permitan crecer profesionalmente.
 
