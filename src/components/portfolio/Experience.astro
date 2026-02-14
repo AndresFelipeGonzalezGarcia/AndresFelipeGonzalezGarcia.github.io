@@ -1,22 +1,21 @@
 ---
-import ExperienceItem from "./ExperienceItem.astro";
 import Heading from "../ui/Heading.astro";
 import { Icon } from "astro-icon/components";
 
 const EXPERIENCE = [
   {
-    date: "2021 - Present",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    date: "2023 - Presente",
+    title: "Estudiante de Ingeniería de Sistemas",
+    company: "Universidad El Bosque",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "Formación académica enfocada en bases de datos, programación orientada a objetos, estructuras de datos y desarrollo web.",
   },
   {
-    date: "2019 - 2020",
-    title: "Software Development Coordinator",
-    company: "EFEELE.DEV",
+    date: "2024",
+    title: "Proyecto Académico - Desarrollo Web",
+    company: "Portafolio Personal",
     description:
-      "I lead the planning, development, and implementation of software projects to optimize administrative processes and improve digital services. I manage and provide support for technology platforms, coordinating development teams to deliver efficient solutions.",
+      "Diseño y desarrollo de un portafolio académico utilizando Astro, Tailwind CSS y GitHub Pages para despliegue.",
   },
 ];
 ---
@@ -25,25 +24,34 @@ const EXPERIENCE = [
   <div class="flex flex-col pt-8 max-w-4xl mx-auto">
     <div class="flex gap-4 items-center justify-center">
       <Icon class="text-3xl dark:text-white text-blacktext" name="briefcase" />
-      <Heading text="Work" textGradient="Experience" level={2} />
+      <Heading text="Experiencia" textGradient="Académica" level={2} />
     </div>
 
-    <div class="relative max-md:mt-0 mt-8" aria-label="Professional experience">
-      <ol class="relative mt-10">
+    <div class="relative mt-10" aria-label="Experiencia académica">
+      <ol class="relative flex flex-col gap-6">
         {
-          EXPERIENCE.map((experience, index) => (
+          EXPERIENCE.map((experience) => (
             <li>
-              <article
-                role="article"
-                aria-labelledby={`experience-title-${index}`}
-              >
-                <div
-                  class="flex flex-col gap-2  text-zinc-00 dark:text-zinc-300 md:col-span-3"
-                  aria-describedby={`experience-title-${index}`}
-                >
-                  <ExperienceItem {...experience} />
+              <div class="rounded-2xl border border-neutral-100 dark:border-zinc-800 bg-white dark:bg-transparent p-6">
+                <div class="flex items-start justify-between gap-4">
+                  <div>
+                    <h3 class="text-lg font-black text-blacktext dark:text-white">
+                      {experience.title}
+                    </h3>
+                    <p class="text-sm font-semibold text-mint-600 dark:text-mint-300">
+                      {experience.company}
+                    </p>
+                  </div>
+
+                  <span class="text-xs font-bold text-gray-500 dark:text-gray-300">
+                    {experience.date}
+                  </span>
                 </div>
-              </article>
+
+                <p class="mt-3 leading-7 font-semibold text-blacktext dark:text-gray-200">
+                  {experience.description}
+                </p>
+              </div>
             </li>
           ))
         }
