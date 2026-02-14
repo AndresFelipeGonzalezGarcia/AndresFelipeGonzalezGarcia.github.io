@@ -3,7 +3,6 @@ import Button from "../ui/Button.astro";
 import Heading from "../ui/Heading.astro";
 import Tools from "../portfolio/Tools.astro";
 import { Icon } from "astro-icon/components";
-import Hobbies from "../portfolio/Hobbies.astro";
 import { getCollection } from "astro:content";
 
 const [staticData] = await getCollection("staticData");
@@ -18,10 +17,7 @@ const {
 } = staticData.data;
 ---
 
-<section
-  class="scroll-m-16 px-8 max-sm:px-4 py-8"
-  id="home"
->
+<section class="scroll-m-16 px-8 max-sm:px-4 py-8" id="home">
   <!-- HERO -->
   <div
     class="mx-auto mb-4 h-96 w-full max-w-7xl rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[.2rem] max-md:h-auto"
@@ -37,21 +33,18 @@ const {
               style={`background-image: url(${profileImage})`}
               aria-label={profileAlt}
             >
-              <a
-                href={profileLink}
-                class="flex h-full w-full"
-              ></a>
+              <a href={profileLink} class="flex h-full w-full" aria-label="Ir a Quién soy"></a>
             </div>
           </div>
         </div>
       </div>
 
       <div class="flex h-full w-7/12 flex-col justify-center gap-4 max-md:w-full">
-        <h1 class="text-4xl font-black dark:text-white">
+        <h1 class="text-4xl font-black text-blacktext dark:text-white">
           {profileName} 👋
         </h1>
 
-        <p class="text-lg font-semibold dark:text-gray-200">
+        <p class="text-lg font-semibold text-blacktext dark:text-gray-200">
           Estudiante de <b>Ingeniería de Sistemas</b> en la Universidad El Bosque.
           Este portafolio muestra mis conocimientos actuales en desarrollo web,
           bases de datos y programación.
@@ -75,58 +68,77 @@ const {
   </div>
 
   <!-- GRID -->
-  <div class="mx-auto grid max-w-7xl grid-cols-2 gap-4 md:grid-cols-4">
+  <div class="mx-auto grid max-w-7xl grid-cols-2 grid-rows-4 gap-4 max-sm:gap-3 md:grid-cols-4 md:grid-rows-2">
+    
+    <!-- VIDEO (grande) -->
+    <div
+      class="col-span-2 row-span-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[.2rem] hover:to-mint-300/30 dark:hover:to-mint-600/30 md:col-start-1 md:row-start-1"
+    >
+      <article
+        class="group relative flex h-full flex-col justify-start overflow-hidden rounded-2xl bg-linear-to-br from-riptide-100 to-white dark:from-mint-950 dark:to-zinc-950 p-8 transition-all hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)]"
+      >
+        <div class="flex items-center gap-4">
+          <Icon class="text-3xl text-mint-500 dark:text-white" name="youtube" aria-hidden="true" />
+          <Heading text="Sobre mí" textGradient="Video" level={3} />
+        </div>
 
-    <!-- HOBBIES -->
-    <div class="rounded-2xl bg-linear-to-r from-riptide-200 to-mint-200 p-6 dark:bg-zinc-800">
-      <Heading text="Más allá del código" level={2} />
-      <div class="mt-4">
-        <Hobbies />
-      </div>
+        <div class="mt-6 flex flex-1 items-center justify-center">
+          <iframe
+            class="w-full max-w-md aspect-video rounded-2xl shadow-xl"
+            src="https://www.youtube-nocookie.com/embed/LlyyF5Er8us"
+            title="Presentación personal"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          ></iframe>
+        </div>
+      </article>
     </div>
 
-    <!-- TECH STACK -->
-    <div class="col-span-2 rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[.2rem]">
-      <article class="rounded-2xl bg-white dark:bg-mint-950 p-6">
+    <!-- TECH STACK (ancho arriba derecha) -->
+    <div
+      class="col-span-2 col-start-1 row-start-1 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] md:col-start-3 md:row-start-1"
+    >
+      <article
+        class="group relative z-0 flex h-full w-full flex-col overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-mint-100 p-6 transition hover:shadow-[0_10px_50px_rgba(13,188,130,0.2)] dark:bg-linear-to-r dark:from-mint-900 dark:to-mint-950 max-md:p-4 gap-6"
+      >
         <div class="flex items-center gap-4">
-          <Icon name="dashboard" class="text-2xl text-mint-500" />
+          <Icon class="text-3xl text-mint-500 dark:text-white" name="dashboard" aria-hidden="true" />
           <Heading text="Tech" textGradient="Stack" level={3} />
         </div>
-        <div class="mt-4">
+        <div class="overflow-y-auto">
           <Tools />
         </div>
       </article>
     </div>
 
-   <div
-  class="col-span-2 row-span-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 p-[.2rem] hover:to-mint-300/30 dark:hover:to-mint-600/30 md:col-start-1 md:row-start-1"
->
-  <article
-    class="group relative flex h-full flex-col justify-start overflow-hidden rounded-2xl bg-linear-to-br from-riptide-100 to-white dark:from-mint-950 dark:to-zinc-950 p-8 transition-all hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)]"
-  >
-    <div class="flex items-center gap-4">
-      <Icon
-        class="text-3xl dark:text-white text-mint-500"
-        name="youtube"
-      />
-      <Heading text="Sobre mí" textGradient="Video" level={3} />
+    <!-- GITHUB REPO (abajo derecha) -->
+    <div
+      class="col-start-1 row-start-2 rounded-2xl bg-linear-to-r from-mint-300 dark:from-mint-600 to-mint-50 dark:to-mint-200/5 hover:to-mint-300/30 dark:hover:to-mint-600/30 p-[.2rem] transition-all ease-in duration-150 hover:scale-105 hover:shadow-[0_20px_50px_rgba(13,188,130,0.4)] z-40 md:col-start-3 md:row-start-2"
+    >
+      <div class="h-full w-full overflow-hidden rounded-2xl dark:bg-zinc-900">
+        <div class="relative h-full w-full overflow-hidden rounded-2xl bg-linear-to-tr from-riptide-100 to-white dark:from-transparent dark:bg-linear-to-bl dark:to-transparent">
+          <a
+            target="_blank"
+            href="https://github.com/AndresFelipeGonzalezGarcia/BasesDeDatos2_2026"
+            aria-label="Mira mi repositorio aquí"
+            rel="noopener noreferrer"
+          >
+            <div class="relative flex h-full flex-col gap-8 p-8 max-xl:p-5 max-md:p-4">
+              <div class="z-2">
+                <Heading text="Trabajos de la clase (Repositorio)" level={3} />
+              </div>
+
+              <Icon
+                class="absolute -bottom-10 left-30 size-50 text-mint-500/30 group-hover:animate-pulse ease-in-out max-sm:left-10 max-md:left-30 xl:size-56 xl:-bottom-5 xl:-right-24"
+                name="github"
+                aria-hidden="true"
+              />
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
-
-    <div class="mt-6 flex justify-center items-center flex-1">
-      <iframe
-        class="w-full max-w-md aspect-video rounded-2xl shadow-xl"
-        src="https://www.youtube.com/embed/LlyyF5Er8us"
-        title="Presentación personal"
-        frameborder="0"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-  </article>
-</div>
-
-
 
   </div>
 </section>
