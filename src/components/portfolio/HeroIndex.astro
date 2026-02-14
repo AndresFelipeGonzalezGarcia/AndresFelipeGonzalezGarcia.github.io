@@ -98,53 +98,41 @@ const {
       </article>
     </div>
 
-    <!-- YOUTUBE SHORTS -->
-    <div class="col-span-2 row-span-2 rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[.2rem]">
-      <article class="rounded-2xl bg-white dark:bg-mint-950 p-8">
-        <div class="flex items-center gap-4">
-          <Icon name="youtube" class="text-3xl text-mint-500" />
-          <Heading text="YouTube" textGradient="Shorts" level={3} />
-        </div>
+   <div class="col-span-2 row-span-2 rounded-2xl bg-linear-to-r from-mint-300 to-mint-50 p-[.2rem]">
+  <article class="rounded-2xl bg-white dark:bg-mint-950 p-8">
 
-        <p class="mt-2 text-sm font-semibold dark:text-gray-200">
-          Shorts donde comparto avances y tips rápidos.
-        </p>
-
-        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-
-          <iframe
-            class="w-full aspect-[9/16] rounded-xl"
-            src="https://www.youtube.com/embed/SHORT_ID_1"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-
-          <iframe
-            class="w-full aspect-[9/16] rounded-xl"
-            src="https://www.youtube.com/embed/SHORT_ID_2"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-
-          <iframe
-            class="w-full aspect-[9/16] rounded-xl"
-            src="https://www.youtube.com/embed/SHORT_ID_3"
-            frameborder="0"
-            allowfullscreen
-          ></iframe>
-
-        </div>
-
-        <div class="mt-6">
-          <Button
-            link="https://www.youtube.com/@TU_CANAL"
-            text="Ver más en YouTube"
-            iconName="youtube"
-            variant="dark"
-          />
-        </div>
-      </article>
+    <div class="flex items-center gap-4">
+      <Icon name="youtube" class="text-3xl text-mint-500" />
+      <Heading text="YouTube" textGradient="Short" level={3} />
     </div>
+
+    <p class="mt-2 text-sm font-semibold dark:text-gray-200">
+      Último short publicado.
+    </p>
+
+    <div class="mt-6 flex justify-center">
+      <iframe
+        class="w-[260px] sm:w-[320px] aspect-[9/16] rounded-2xl shadow-xl"
+        src="https://www.youtube.com/embed/SHORT_ID"
+        title="YouTube Short"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <div class="mt-6 flex justify-center">
+      <Button
+        link="https://www.youtube.com/@TU_CANAL"
+        text="Ver más en YouTube"
+        iconName="youtube"
+        variant="dark"
+      />
+    </div>
+
+  </article>
+</div>
+
 
   </div>
 </section>
