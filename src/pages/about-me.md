@@ -1,3 +1,14 @@
+---
+layout: /src/layouts/MarkdownAbout.astro
+title: "Quién soy | Andrés González"
+description: "Portafolio académico de Ingeniería de Sistemas: bases de datos, programación y desarrollo web."
+author: "Andrés González"
+profileLink: "/about-me"
+image:
+  url: "/images/andres-profile.webp"
+  alt: "Foto de Andrés González"
+---
+
 Desde que inicié mi formación en **Ingeniería de Sistemas en la Universidad El Bosque**, he desarrollado un gran interés por el mundo de la tecnología y el desarrollo de software. Actualmente curso quinto semestre y he fortalecido mis conocimientos en **bases de datos, programación y desarrollo web**.
 
 ## Mi Enfoque Académico 🖥️
